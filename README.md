@@ -43,3 +43,17 @@ brew tap 0x23me/tap
 brew trust --cask 0x23me/tap/pbs-mackup
 brew install --cask 0x23me/tap/pbs-mackup
 ```
+
+## Priel
+
+juist in the macOS menu bar: a switch, the network's devices and subnets, and split DNS.
+macOS 14 or later. More at [0x23me/priel](https://github.com/0x23me/priel).
+
+```sh
+brew tap 0x23me/tap
+brew trust --cask 0x23me/tap/priel
+brew install --cask 0x23me/tap/priel
+```
+
+`brew uninstall --zap priel` also stops and removes the VPN daemon; a plain uninstall leaves it,
+as Homebrew runs a cask's uninstall steps on every upgrade too.
