@@ -32,3 +32,14 @@ deletion hooks. It leaves your configuration, app state, and Keychain data alone
 Versioned downloads and checksums are available under this repository's Releases.
 The signed Sparkle feed is the latest release's `appcast.xml` asset. There is no
 separate build or repackaging for Homebrew.
+
+## pbs-mackup
+
+Backs up a Mac's home folder to a Proxmox Backup Server. Apple silicon, macOS 26 or later.
+More at [0x23me/pbs-mackup](https://github.com/0x23me/pbs-mackup).
+
+```sh
+brew tap 0x23me/tap
+brew trust --cask 0x23me/tap/pbs-mackup
+brew install --cask 0x23me/tap/pbs-mackup
+```
