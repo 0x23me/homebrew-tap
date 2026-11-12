@@ -1,6 +1,6 @@
 cask "pbs-mackup" do
-  version "0.1.0"
-  sha256 "6e87be37560b026422529ad5ff020013e8c054c9360ea67a0856e8ecd722c021"
+  version "0.1.1"
+  sha256 "4e3f4c9e98eebdd6f92785562b3de25d320d7fe93596b2dbba494e1adf8cef47"
 
   url "https://github.com/0x23me/pbs-mackup/releases/download/v#{version}/PBSMackup-#{version}.zip"
   name "PBS Mackup"
