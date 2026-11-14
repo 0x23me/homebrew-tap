@@ -1,6 +1,6 @@
 cask "priel" do
-  version "0.1.0"
-  sha256 "dba36096110aa3157a43ee0610c2f703ded1365b36635d4402c66cea7cd79cdd"
+  version "0.2.0"
+  sha256 "b5797df53448bfe9a34b08b4ce8c0e530e89d79c6cba25d76893642b8e006aec"
 
   url "https://github.com/0x23me/priel/releases/download/v#{version}/Priel-#{version}.zip"
   name "Priel"
@@ -24,6 +24,12 @@ cask "priel" do
           while pgrep -qf "$h/juistd-launch" && [ $i -lt 50 ]; do sleep 0.2; i=$((i + 1)); done
           [ ! -x "$h/priel-dns" ] || "$h/priel-dns" stop
           case $(readlink /usr/local/bin/juist) in "$h"/*) rm /usr/local/bin/juist ;; esac
+          # juist's own LaunchDaemon, which Priel disabled, runs this Mac's keys again.
+          p=/Library/LaunchDaemons/io.nning.juist.juistd.plist
+          if [ -f "$p" ]; then
+            launchctl enable system/io.nning.juist.juistd
+            launchctl bootstrap system "$p" 2>/dev/null || true
+          fi
         SH
         sudo:       true,
       },
@@ -40,6 +46,7 @@ cask "priel" do
     juistd for root in /Library/PrivilegedHelperTools.
 
     brew uninstall leaves juistd running if it is on. brew uninstall --zap stops it and removes
-    it. Neither removes /var/db/juist, this Mac's keys in the network.
+    it. Neither removes /var/db/juist, this Mac's keys in the network, or the _juist user who
+    owns them.
   EOS
 end
