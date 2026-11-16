@@ -1,6 +1,6 @@
 cask "pbs-mackup" do
-  version "0.4.0"
-  sha256 "d2987f567d4cc40bc45e7838193d6e74e7ce4aaae80da07960517ef0f5e99753"
+  version "0.5.0"
+  sha256 "9a032e251e75ceb65e506a83859ce8180be8b8d0cb19cbb51da9d3bed9fcc372"
 
   url "https://github.com/0x23me/pbs-mackup/releases/download/v#{version}/PBSMackup-#{version}.zip"
   name "PBS Mackup"
@@ -23,6 +23,5 @@ cask "pbs-mackup" do
 
   caveats <<~EOS
     Switch on Full Disk Access for PBS Mackup in System Settings.
-    Open in Finder needs FUSE-T: brew install --cask fuse-t
   EOS
 end
