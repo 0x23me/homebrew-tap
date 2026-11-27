@@ -1,6 +1,6 @@
 cask "glasswing" do
-  version "0.7.1"
-  sha256 "b777789aa509334d4c5c54d6b078e43c7802ec7ecec3a9c12c22130197aec4fe"
+  version "0.7.2"
+  sha256 "462fcfa4aeaee9cf8d5a46ee3b55fff23ef1a016085549527488c6ab32be4a80"
 
   url "https://github.com/0x23me/homebrew-tap/releases/download/v#{version}/Glasswing-#{version}-macos-arm64.zip"
   name "Glasswing"
